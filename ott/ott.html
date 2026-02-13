@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chithram - Stream Your Favorites</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="ott.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <header id="navbar">
+        <div class="logo">Chithram <span class="highlight"></span></div>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">TV Shows</a></li>
+                <li><a href="#">Movies</a></li>
+                <li><a href="#">Upcoming</a></li>
+            </ul>
+        </nav>
+        <div class="user-actions">
+            <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" placeholder="Search movie...">
+            </div>
+            <div class="user-profile">
+                <img src="./WhatsApp Image 2026-02-12 at 11.08.38 PM (1).jpeg" alt="User">
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h4 class="sub-title">Chithram Presents</h4>
+            <h1 class="movie-title">Interstellar</h1>
+            <div class="meta-info">
+                <span class="quality">4K</span>
+                <span class="rating"><i class="fa-solid fa-star"></i> 8.7</span>
+                <span class="genre">Sci-fi/Adventure </span>
+                <span class="year">2014</span>
+                <span class="duration">2h 49m</span>
+            </div>
+            <p class="description">
+               When Earth becomes uninhabitable in the future, a farmer and ex-NASA pilot, Joseph Cooper, is tasked to pilot a spacecraft, along with a team of researchers, to find a new planet for humans.
+            </p>
+            <div class="buttons">
+                <button class="btn-primary"><i class="fa-solid fa-play"></i> Play Now</button>
+                <button class="btn-secondary"><i class="fa-solid fa-plus"></i></button>
+            </div>
+        </div>
+        <div class="hero-overlay"></div>
+    </section>
+
+    <!-- Categories -->
+    <div class="categories-wrapper">
+        <div class="category-pill active">All</div>
+        <div class="category-pill">Action</div>
+        <div class="category-pill">Comedy</div>
+        <div class="category-pill">Series</div>
+        <div class="category-pill">Adventure</div>
+        <div class="category-pill">Sci-Fi</div>
+        <div class="category-pill">Drama</div>
+    </div>
+
+    <!-- Most Viewed Section -->
+    <section class="movie-section">
+        <div class="section-header">
+            <h2>Most Viewed</h2>
+            <a href="#" class="view-all">View all <i class="fa-solid fa-angle-right"></i></a>
+        </div>
+        <div class="carousel-container">
+            <button class="carousel-btn left-btn" onclick="scrollCarousel('most-viewed', -300)"><i
+                    class="fa-solid fa-chevron-left"></i></button>
+            <div class="carousel" id="most-viewed">
+                <!-- Movie Cards -->
+                <div class="movie-card">
+                    <div class="card-image"
+                        style="background-image: url('./SPIDER-MAN_\ NO\ WAY\ HOME\ \(2021\).jpg')">
+                    </div>
+                    <div class="card-info">
+                        <h3>Spider-Man: No Way Home</h3>
+                        <div class="meta"><span>2021</span><span><i class="fa-solid fa-star"></i> 8.2</span></div>
+                    </div>
+                </div>
+                <div class="movie-card">
+                    <div class="card-image"
+                        style="background-image: url('./Avengers_\ Infinity\ War\ \(2018\)\ [1401\ x\ 2048].jpg')">
+                    </div>
+                    <div class="card-info">
+                        <h3>Avengers: Infinity War</h3>
+                        <div class="meta"><span>2018</span><span><i class="fa-solid fa-star"></i> 8.4</span></div>
+                    </div>
+                </div>
+                <div class="movie-card">
+                    <div class="card-image"
+                        style="background-image: url('./Thudarum\ \(2025\).jpg')">
+                    </div>
+                    <div class="card-info">
+                        <h3>Thudarum</h3>
+                        <div class="meta"><span>2025</span><span><i class="fa-solid fa-star"></i> 7.5</span></div>
+                    </div>
+                </div>
+                <div class="movie-card">
+                    <div class="card-image"
+                        style="background-image: url('./Bramayugam.jpg')">
+                    </div>
+                    <div class="card-info">
+                        <h3>Bramayugam</h3>
+                        <div class="meta"><span>2024</span><span><i class="fa-solid fa-star"></i> 7.7</span></div>
+                    </div>
+                </div>
+                <!-- Duplicate for scroll effect -->
+                <div class="movie-card">
+                    <div class="card-image"
+                        style="background-image: url('./Trends\ International\ DC\ Comics\ -\ The\ Dark\ Knight\ -\ Batman\ Logo\ On\ Fire\ One\ Sheet\ Wall\ Poster\,\ 22_375_\ x\ 34_\,\ Unframed\ Version.jpg')">
+                    </div>
+                    <div class="card-info">
+                        <h3>The Dark Knight</h3>
+                        <div class="meta"><span>2008</span><span><i class="fa-solid fa-star"></i> 9.0</span></div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-btn right-btn" onclick="scrollCarousel('most-viewed', 300)"><i
+                    class="fa-solid fa-chevron-right"></i></button>
+        </div>
+    </section>
+
+    <!-- Featured Movie: Black Adam Style -->
+    <section class="featured-content" id="black-adam-feature">
+        <div class="featured-text">
+            <h2>BLACK ADAM</h2>
+            <div class="rating-stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star-half-stroke"></i>
+                <span class="score">3.8/5</span>
+            </div>
+            <p>Nearly 5,000 years after he was bestowed with the almighty powers of the Egyptian gods-and imprisoned
+                just as quickly-Black Adam is freed from his earthly tomb, ready to unleash his unique form of justice
+                on the modern world.</p>
+            <div class="buttons">
+                <button class="btn-primary">Play</button>
+                <button class="btn-secondary"><i class="fa-solid fa-plus"></i></button>
+            </div>
+        </div>
+        <div class="featured-media">
+            <!-- Placeholder for trailer/poster stack -->
+            <div class="media-stack">
+                <img src="./black-adam.jpg" alt="Black Adam Scene 1">
+                <img src="./Black Adam.jpg" alt="Black Adam Scene 2">
+            </div>
+        </div>
+    </section>
+
+    <!-- Most Popular Section -->
+    <section class="movie-section">
+        <div class="section-header">
+            <h2>Most Popular</h2>
+            <a href="#" class="view-all">View all <i class="fa-solid fa-angle-right"></i></a>
+        </div>
+        <div class="carousel-container">
+            <button class="carousel-btn left-btn" onclick="scrollCarousel('most-popular', -300)"><i
+                    class="fa-solid fa-chevron-left"></i></button>
+            <div class="carousel" id="most-popular">
+                <div class="movie-card portrait">
+                    <div class="card-image"
+                        style="background-image: url('./John\ Wick\ 4\ pelicula\ gratis\ descargar\ latino.jpg')">
+                    </div>
+                    <div class="card-info">
+                        <h3>John Wick 4</h3>
+                        <p>Action/Thriller</p>
+                    </div>
+                </div>
+                <div class="movie-card portrait">
+                    <div class="card-image"
+                        style="background-image: url('./Minnal\ Murali.jpg')">
+                    </div>
+                    <div class="card-info">
+                        <h3>Minnal Murali</h3>
+                        <p>Comedy/Action</p>
+                    </div>
+                </div>
+                <div class="movie-card portrait">
+                    <div class="card-image"
+                        style="background-image: url('./Avatar\ The\ Way\ Of\ Water.jpg')">
+                    </div>
+                    <div class="card-info">
+                        <h3>Avatar: The Way of Water</h3>
+                        <p>Sci-Fi/Adventure</p>
+                    </div>
+                </div>
+                <div class="movie-card portrait">
+                    <div class="card-image"
+                        style="background-image: url('./Spiderman_\ Across\ the\ Spiderverse\ \(2023\).jpg')">
+                    </div>
+                    <div class="card-info">
+                        <h3>Spider-Man: Across the Spider-Verse</h3>
+                        <p>Animation/Action</p>
+                    </div>
+                </div>
+                <div class="movie-card portrait">
+                    <div class="card-image"
+                        style="background-image: url('./Póster\ _The\ Flash_.jpg')">
+                    </div>
+                    <div class="card-info">
+                        <h3>Flash</h3>
+                        <p>Action/Sci-Fi</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-btn right-btn" onclick="scrollCarousel('most-popular', 300)"><i
+                    class="fa-solid fa-chevron-right"></i></button>
+        </div>
+    </section>
+
+    <!-- Featured TV: Flash Style -->
+    <section class="featured-content inverted" id="flash-feature">
+        <div class="featured-media">
+            <img src="./֙⋆ 🩰 𖥻 𝗴𝗰𝗳𝗯𝘁𝘀𝘁𝗮𝗿 𖦆ˑ 𖥻.jpg" alt="The Flash Poster"
+                class="main-poster">
+        </div>
+        <div class="featured-text">
+            <h2>Breaking Bad : <br> SEASON 5</h2>
+            <div class="rating-stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <span class="score">IMDb 9.5</span>
+            </div>
+            <p>Walter White, a chemistry teacher, discovers that he has cancer and decides to get into the meth-making business to repay his medical debts. His priorities begin to change when he partners with Jesse.</p>
+            <div class="buttons">
+                <button class="btn-primary">Play</button>
+                <button class="btn-secondary"><i class="fa-solid fa-plus"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="brand">Chithram <span class="highlight"></span></div>
+            <div class="socials">
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+            <p>&copy; 2026 Chithram. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="ott.js"></script>
+</body>
+
+</html>

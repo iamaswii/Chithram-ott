@@ -1,0 +1,575 @@
+:root {
+    --bg-color: #0d0d10;
+    --card-bg: #1a1a1f;
+    --primary: #f5c518;
+    --accent: #e50914;
+    --text-main: #ffffff;
+    --text-muted: #a0a0a0;
+    --gradient-gold: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+    --gradient-blue: linear-gradient(135deg, #00C6FF 0%, #0072FF 100%);
+    --glass: rgba(255, 255, 255, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    overflow-x: hidden;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Header */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    z-index: 1000;
+    transition: background 0.3s, padding 0.3s;
+}
+
+header.scrolled {
+    background: rgba(13, 13, 16, 0.95);
+    padding: 15px 50px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #fff;
+}
+
+.logo .highlight {
+    color: gold;
+}
+
+nav ul {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+nav ul li a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    color: var(--text-main);
+}
+
+.user-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.search-box {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 8px 15px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.search-box input {
+    background: transparent;
+    border: none;
+    color: #fff;
+    outline: none;
+}
+
+.search-box i {
+    color: var(--text-muted);
+}
+
+.user-profile img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: border 0.3s;
+}
+
+.user-profile img:hover {
+    border-color: gold;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    width: 100%;
+    background: url('hero-bg.jpg') no-repeat center center/cover;
+    /* Fallback if image missing */
+    background-image: url('./wp11717712-interstellar-poster-wallpapers.jpg');
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 0 50px;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(13, 13, 16, 0.9) 0%, rgba(13, 13, 16, 0.5) 50%, rgba(13, 13, 16, 0) 100%),
+        linear-gradient(to bottom, transparent 0%, rgba(13, 13, 16, 1) 100%);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+}
+
+.sub-title {
+    color: gold;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.movie-title {
+    font-size: 60px;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    font-family: 'Outfit', sans-serif;
+    /* Fallback to standard if needed */
+    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.meta-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    color: var(--text-muted);
+    font-size: 14px;
+}
+
+.meta-info .quality {
+    border: 1px solid var(--text-muted);
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-size: 12px;
+}
+
+.meta-info .rating i {
+    color: gold;
+}
+
+.description {
+    color: #ccc;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    font-size: 16px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.btn-primary {
+    background: var(--gradient-blue);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 114, 255, 0.4);
+}
+
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Categories */
+.categories-wrapper {
+    padding: 20px 50px;
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.categories-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+.category-pill {
+    padding: 8px 20px;
+    border-radius: 20px;
+    background: #1f1f23;
+    color: var(--text-muted);
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.3s;
+    border: 1px solid transparent;
+}
+
+.category-pill:hover,
+.category-pill.active {
+    background: var(--primary);
+    color: #000;
+    font-weight: 600;
+}
+
+/* Movie Sections & Carousel */
+.movie-section {
+    padding: 40px 50px;
+    position: relative;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.section-header h2 {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.view-all {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.view-all:hover {
+    color: var(--primary);
+}
+
+.carousel-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.carousel {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 10px 0;
+    scrollbar-width: none;
+    width: 100%;
+}
+
+.carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.carousel-btn {
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    position: absolute;
+    z-index: 10;
+    backdrop-filter: blur(5px);
+    transition: background 0.3s;
+}
+
+.carousel-btn:hover {
+    background: var(--primary);
+    color: #000;
+}
+
+.left-btn {
+    left: -20px;
+}
+
+.right-btn {
+    right: -20px;
+}
+
+/* Cards */
+.movie-card {
+    min-width: 280px;
+    /* Wider for aspect 16:9 thumbnails */
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--card-bg);
+    transition: transform 0.3s;
+    position: relative;
+    cursor: pointer;
+}
+
+.movie-card.portrait {
+    min-width: 200px;
+    /* Standard poster size */
+}
+
+.movie-card:hover {
+    transform: scale(1.05);
+    z-index: 5;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.card-image {
+    width: 100%;
+    height: 160px;
+    /* 16:9 ish */
+    background-size: cover;
+    background-position: center;
+    background-color: #333;
+}
+
+.movie-card.portrait .card-image {
+    height: 300px;
+}
+
+.card-info {
+    padding: 15px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.card-info h3 {
+    font-size: 16px;
+    margin-bottom: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.card-info .meta {
+    font-size: 12px;
+    color: var(--text-muted);
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-info .meta i {
+    color: gold;
+    margin-right: 5px;
+}
+
+/* Featured Content (Black Adam) */
+.featured-content {
+    background: url('./bQXAqRx2Fgc46uCVWgoPz5L5Dtr.jpg') no-repeat top center/cover;
+    position: relative;
+    padding: 80px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 500px;
+    margin: 40px 0;
+}
+
+.featured-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #0d0d10 30%, transparent 100%);
+    z-index: 1;
+}
+
+.featured-content.inverted::before {
+    background: linear-gradient(to left, #0d0d10 40%, rgba(13, 13, 16, 0.6) 100%);
+}
+
+.featured-content.inverted {
+    justify-content: flex-end;
+    /* Text on right */
+    background-image: url('./wp2915715-breaking-bad-wallpaper-hd.jpg');
+    background-position: center 20%;
+   
+  
+}
+
+.featured-text {
+    padding-left: 90px;
+    position: relative;
+    z-index: 2;
+    max-width: 500px;
+}
+
+.featured-text h2 {
+    font-size: 40px;
+    margin-bottom: 20px;
+    font-family: 'Outfit';
+}
+
+.rating-stars {
+    color: gold;
+    margin-bottom: 20px;
+}
+
+.rating-stars .score {
+    color: #fff;
+    margin-left: 10px;
+    font-size: 14px;
+}
+
+.featured-media {
+    position: relative;
+    z-index: 2;
+}
+
+.media-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.media-stack img {
+    width: 250px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.main-poster {
+    max-width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 0 50px rgba(229, 9, 20, 0.4);
+    /* Glow for Flash */
+}
+
+/* Footer */
+footer {
+    border-top: 1px solid #1f1f23;
+    padding: 40px 50px;
+    margin-top: 50px;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.socials {
+    display: flex;
+    gap: 20px;
+}
+
+.socials a {
+    color: var(--text-muted);
+    font-size: 20px;
+    transition: color 0.3s;
+}
+
+.socials a:hover {
+    color: var(--primary);
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    header {
+        padding: 20px;
+    }
+
+    .hero {
+        padding: 0 20px;
+    }
+
+    .movie-title {
+        font-size: 40px;
+    }
+
+    .featured-content {
+        flex-direction: column;
+        padding: 50px 20px;
+        text-align: center;
+    }
+
+    .featured-content::before {
+        background: rgba(13, 13, 16, 0.8);
+    }
+
+    .featured-text {
+        margin-bottom: 30px;
+    }
+
+    .buttons {
+        justify-content: center;
+    }
+
+    .movie-section {
+        padding: 40px 20px;
+    }
+}
